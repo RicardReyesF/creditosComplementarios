@@ -32,6 +32,8 @@ Route::get('/reporte/export',[\App\Http\Controllers\reporteController::class,'ex
 Route::post('/actividadnueva/create',[\App\Http\Controllers\actividadnueva::class,'create'])->name('Actividadnueva1');
 Route::get('/actualizar/{id}',[\App\Http\Controllers\modificarActividad::class,'actualizar'])->name('Actualizar');
 Route::get('/eliminar/{id}',[\App\Http\Controllers\eliminarActividad::class,'eliminar'])->name('Eliminar');
+Route::get('/solicitud/actividad',[\App\Http\Controllers\solicitudController::class,'insertar'])->name('Solicitud');
+
 
 Auth::routes();
 

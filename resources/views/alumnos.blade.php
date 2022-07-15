@@ -112,7 +112,7 @@
                                         <td class="responsable" align="left">{{$actividad->responsable}}</td>
                                         <td class="tipo">{{$actividad->tipo}}</td>
                                         <td class="horas">{{$actividad->horas}}</td>
-                                        <td><input type="checkbox" id="seleccion" class="checkbox_id" name="seleccion" value="Actividad" style="width: 47px;" data-id="{{$actividad->id}}" ></td>
+                                        <td><input type="checkbox" id="seleccion" class="checkbox_id" name="seleccion" value="Actividad" style="width: 47px;" data-id="{{$actividad->id}}"></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -123,7 +123,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{route('Descarga')}}">
+        <form action="{{route('Solicitud')}}">
             <div style="text-align: right;">
                 <button class="btn btn-lg btn-primary btn-block registrar" type="submit" id="registrar">
                     Registrar
@@ -136,21 +136,47 @@
     <br>
 
     <script>
-        $(document).ready(function() {
-            $('.registrar').on('click', function(e) {
-                var idsArray = [];
+        $("#registrar").on("click", () => {
 
-                $('input:checkbox:checked.checkbox_id').each(function () {
-                idsArray.push($(this).attr('data-id'));
+            var arrayFila = [];
+
+            $(".checkbox_id:checked").each((indice, elemento) => {
+                let fila = $(elemento).parents("tr");
+                let seleccion = $(elemento).val();
+                let id_actividad = fila.find(".id")
+                let creditos = fila.find(".creditos").val();
+                let actividad = fila.find(".actividad").val();
+                let tipo = fila.find(".tipo").val();
+                let horas = fila.find(".horas").val();
                 
+
+                arrayFila.push({
+                    id_actividad: id_actividad,
+                    creditos: persona,
+                    actividad: fecha,
+                    tipo: ciudad,
+                    horas: horas
+                });
             });
-            console.log(idsArray);
-            
+            return arrayFila;
+
+            console.log(arrayFila);
+            let base_url = "";
+            $.ajax({
+                url: base_url + "solicitud/actividad",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    personas: arrayFila
+                },
+                success: function(json) {},
+                complete: function(textStatus, jqXHR) {},
+                error: function(textStatus, errorThrown, jqXHR) {}
+            });
+
         });
-        
-    });
     </script>
-    
+
 
 
     </body>
