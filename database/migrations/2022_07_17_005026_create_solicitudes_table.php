@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('solicitud_controllers', function (Blueprint $table) {
+        Schema::create('solicitudes', function (Blueprint $table) {
             $table->id();
+            $table->integer('actividades_id');
+            $table->integer('alumnos_id');
+            $table->integer('estado');
             $table->timestamps();
+
         });
     }
 
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicitud_controllers');
+        Schema::dropIfExists('solicitudes');
     }
 };

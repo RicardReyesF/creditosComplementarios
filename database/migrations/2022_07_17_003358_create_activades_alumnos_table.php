@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('solicitud_alumnos', function (Blueprint $table) {
+        Schema::create('activades_alumnos', function (Blueprint $table) {
             $table->id();
-            $table->integer('creditos');
-            $table->string('actividad');
-            $table->string('responsable');
-            $table->string('tipo');
-            $table->integer('horas');
-            $table->string('alumno');
+            $table->integer('actividades_id');
+            $table->integer('alumnos_id');
             $table->timestamps();
+
         });
     }
 
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solicitud_alumnos');
+        Schema::dropIfExists('activades_alumnos');
     }
 };

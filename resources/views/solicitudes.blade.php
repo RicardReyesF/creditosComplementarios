@@ -30,24 +30,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                                        <tr role="row" class="odd">
-                                            <td class="sorting_1">2</td>
-                                            <td align="left">Curso Laravel</td>
-                                            <td>4</td>
-                                            <td>15280819</td>
-                                            <td>Daniela Albor Meza</td>
-                                            <td><input type="checkbox" id="seleccion" name="seleccion" value="Actividad" style="width: 47px;"></td>
-                                        </tr>
-                                        <tr role="row" class="odd">
-                                            <td class="sorting_1">1</td>
-                                            <td align="left">Curso Php</td>
-                                            <td>5</td>
-                                            <td>15280849</td>
-                                            <td>Ricardo Reyes Fernandez</td>
-                                            <td><input type="checkbox" id="seleccion" name="seleccion" value="Actividad" style="width: 47px;"></td>
-                                        </tr>
-                                        
-                                    </tbody>
+                            @foreach ($solicitudes as $solicitud )
+                            <tr role="row" class="odd">
+                                <td>{{$solicitud->id}}</td>
+                                <td>{{$solicitud->alumnos_id}}</td>
+                                <td>{{$solicitud->actividades_id}}</td>
+                            </tr>
+
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -57,7 +48,7 @@
     <br>
     <br>
     <div class="w3-section" style="text-align:end;">
-        
+
         <a class="btn btn-success " id="sidebarToggle">Aceptar</a>
         <a class="btn btn-danger " id="sidebarToggle">Denegar</a>
     </div>

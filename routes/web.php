@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/fomulario',[\App\Http\Controllers\formularioController::class,'formulario'])->name('Formulario');
+Route::get('/formulario',[\App\Http\Controllers\formularioController::class,'formulario'])->name('Formulario');
 Route::get('/alumnos',[\App\Http\Controllers\alumnosController::class,'alumnos'])->name('Alumnos');
 Route::get('/descarga',[\App\Http\Controllers\descargaController::class,'descarga'])->name('Descarga');
 Route::get('/administrador',[\App\Http\Controllers\administradorController::class,'administrador'])->name('Administrador');
@@ -32,8 +32,7 @@ Route::get('/reporte/export',[\App\Http\Controllers\reporteController::class,'ex
 Route::post('/actividadnueva/create',[\App\Http\Controllers\actividadnueva::class,'create'])->name('Actividadnueva1');
 Route::get('/actualizar/{id}',[\App\Http\Controllers\modificarActividad::class,'actualizar'])->name('Actualizar');
 Route::get('/eliminar/{id}',[\App\Http\Controllers\eliminarActividad::class,'eliminar'])->name('Eliminar');
-Route::get('/solicitud/actividad',[\App\Http\Controllers\solicitudController::class,'insertar'])->name('Solicitud');
-
+Route::get('/solicitud/actividad/{id}',[\App\Http\Controllers\solicitudController::class,'insertar'])->name('Solicitud');
 
 Auth::routes();
 
