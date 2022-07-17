@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+
     public const HOME = '/formulario';
 
     /**
@@ -43,10 +44,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
     }
+
 }

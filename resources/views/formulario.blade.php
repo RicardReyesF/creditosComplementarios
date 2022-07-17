@@ -2,7 +2,7 @@
 @extends('plantilla')
 @section('content')
 <div class="container">
-	<form action="{{route('login')}}" method="POST">
+	<form class="user">
         @csrf
 
         <label>Usuario</label>

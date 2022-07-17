@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/formulario',[\App\Http\Controllers\formularioController::class,'formulario'])->name('Formulario');
+//Route::get('/home1',[\App\Http\Controllers\solicitudAlumno::class,'no'])->name('No');
 Route::get('/alumnos',[\App\Http\Controllers\alumnosController::class,'alumnos'])->name('Alumnos');
 Route::get('/descarga',[\App\Http\Controllers\descargaController::class,'descarga'])->name('Descarga');
 Route::get('/administrador',[\App\Http\Controllers\administradorController::class,'administrador'])->name('Administrador');
