@@ -34,7 +34,7 @@ Route::post('/actividadnueva/create',[\App\Http\Controllers\actividadnueva::clas
 Route::get('/actualizar/{id}',[\App\Http\Controllers\modificarActividad::class,'actualizar'])->name('Actualizar');
 Route::get('/eliminar/{id}',[\App\Http\Controllers\eliminarActividad::class,'eliminar'])->name('Eliminar');
 Route::get('/solicitud/actividad/{id}',[\App\Http\Controllers\solicitudController::class,'insertar'])->name('Solicitud');
-
+Route::get('/solicitud/aceptar/{id}',[\App\Http\Controllers\solicitudesController::class,'aceptar'])->name('AceptarSolicitud');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
