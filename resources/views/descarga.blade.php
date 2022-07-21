@@ -51,16 +51,7 @@
                         <div class="col-md-4"></div>
                             <br>
                             <br>
-                            <a href="{{asset('documentos/Prueba.pdf')}}">
-                                <center>
-                                    <button type="button" class="btn btn-warning btn-lg">
-                                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true">
 
-                                        </span>
-                                        Descargar
-                                    </button>
-                                </center>
-                            </a>
                         </div>
                 </div>
                 <div class="table tablesorter">
@@ -116,6 +107,11 @@
                                             <td>COMPLEMENTARIA_GENERICA</td>
                                             <td>20</td>
                                             <td>Acreditado</td>
+                                            <td>
+                                                <a href="{{route('Constancia')}}">
+                                                    Descargar
+                                                </a>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

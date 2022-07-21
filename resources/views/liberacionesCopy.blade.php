@@ -36,22 +36,29 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($solicitudes as $solicitud )
                             <tr role="row" class="odd">
+
                                 <td>{{$solicitud->id}}</td>
                                 <td>{{$solicitud->alumnos_id}}</td>
                                 <td>{{$solicitud->actividades_id}}</td>
                                 <td>{{$solicitud->estado}}</td>
                                 <td>
-                                    <a type="button" class="btn btn-success" href="#"> Aceptar </a>
+                                    <select name="calificacion"  class="calificacion" id="calf">
+                                            <option $value="{{$solicitud->desempeño}}">{{$solicitud->desempeño}}</option>
+                                                <option> Sufuciente </option>
+                                                <option> Bueno </option>
+                                                <option> Notable </option>
+                                                <option> Excelente </option>
+                                    </select>
                                 </td>
                                 <td>
-                                    <a type="button" class="btn btn-danger" href="#"> Denegar </a>
+                                    <a type="button" class="btn btn-success" href="{{route('LiberarSolicitud',)}}" method="GET"> Liberar </a>
                                 </td>
-                            </tr>
 
+                            </tr>
                             @endforeach
+
 
                         </tbody>
                     </table>
@@ -62,10 +69,5 @@
     </div>
     <br>
     <br>
-    <div class="w3-section" style="text-align:end;">
-
-        <a class="btn btn-success " id="sidebarToggle">Liberar</a>
-    </div>
-
 </div>
 @endsection

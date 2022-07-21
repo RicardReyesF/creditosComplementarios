@@ -19,7 +19,12 @@ class solicitudesController extends Controller
         $actividad = solicitudes::find($id);
         $actividad->estado = 2;
         $actividad->save();
-        return view('/solicitudesCopia');
+        return redirect('/solicitudesCopia');
+    }
+    public function denegar($id){
+        $actividad = solicitudes::find($id);
+        $actividad->delete();
+        return redirect('/solicitudesCopia');
     }
 
 }

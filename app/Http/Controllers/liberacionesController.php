@@ -10,7 +10,15 @@ class liberacionesController extends Controller
     public function liberaciones()
     {
         $solicitudes = solicitudes::query()->where('estado','=',2)->get();
-        return view('liberaciones', array('solicitudes' => $solicitudes));
+        return view('liberacionesCopy', array('solicitudes' => $solicitudes));
     }
-    //
+    public function liberar(Request $request){
+        return $request;
+        $actividad = solicitudes::find($id);
+        return $actividad;
+        $actividad->estado = 3;
+        //$actividad->desempeño=$desempeño;
+        $actividad->save();
+        return redirect('/solicitudesCopia');
+    }
 }

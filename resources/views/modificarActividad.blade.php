@@ -14,11 +14,11 @@
             <option> 1 </option>
             <option> 2 </option>
         </select>
-        
+
         <label>Actividad</label>
         <input type="text" class="field" name="actividad" value="{{$actividad->actividad}}">
         <label>Responsable</label>
-        <input type="text" class="field" name="responsable" value="{{$actividad->responsable}}"> 
+        <input type="text" class="field" name="responsable" value="{{$actividad->responsable}}">
 
         <label>Tipo</label>
         <select name="tipo" class="field">
@@ -30,12 +30,12 @@
             <option> Proyectos de investigacion </option>
             <option> Generico </option>
         </select>
-        
+
         <label>Fecha Inicio</label>
         <input type="date" class="field" name="fechaInicio" value="{{$actividad->fechaInicio}}">
-        
+
         <label>Fecha Terminacion</label>
-        <input type="date" class="field" name="fechaTerminacion" value="{{$actividad->fechaTerminacion}}"> 
+        <input type="date" class="field" name="fechaTerminacion" value="{{$actividad->fechaTerminacion}}">
         @endforeach
 
         <br>

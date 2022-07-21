@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('actividades_id');
             $table->integer('alumnos_id');
             $table->integer('estado');
+            $table->string('desempeño')->nullable();
             $table->timestamps();
 
         });

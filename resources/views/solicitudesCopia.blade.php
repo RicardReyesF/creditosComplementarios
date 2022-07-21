@@ -42,7 +42,7 @@
                                     <a type="button" class="btn btn-success" href="{{route('AceptarSolicitud',$solicitud->id)}}"> Aceptar </a>
                                 </td>
                                 <td>
-                                    <a type="button" class="btn btn-danger" href="#"> Denegar </a>
+                                    <a type="button" class="btn btn-danger" href="{{route('DenegarSolicitud',$solicitud->id)}}"> Denegar </a>
                                 </td>
                             </tr>
 
