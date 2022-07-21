@@ -6,8 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Constancia</title>
 </head>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
 <body>
-<img src="{{public_path('documentos/logo-tecnm-pdf.jpg')}}">
+<img src="{{public_path('documentos/logo-tecnm-pdf.jpg')}}" height="100" >
 <h2><b> XXVI. CONSTANCIA DE CUMPLIMIENTO DE ACTIVIDAD COMPLEMENTARIA </b></h2>
 <p><b>C._______________ </b></p>
 <p><b>Jefe(a) del Departamento de Servicios Escolares o su equivalente en los Institutos Tecnologicos Descentralizados</b></p>
@@ -28,10 +48,21 @@
 <br>
 <p>Se extiende la presente en la _____ a los ___ dias de _____ de 20__</p>
 <br>
-                                    <p><b>Atentamente</b></p>
+                        <center><b>ATENTAMENTE</b></center>
 <br>
-<p>_____________________________</p>           <p> ________________________</p>
-<b>Nombre y firma del (de la)                       <b>Vo. Bo. del Jefe(a) del
-    Profesor(a) responsable</b>                      Departamento de ________</b></p>
+<div class="row">
+    <div class="column" style="background-color:#ffffff;">
+        <center><p>______________________</p></center>
+      <center><p>Nombre y firma del (de la)
+        Profesor(a) responsable
+      </p></center>
+    </div>
+    <div class="column" style="background-color:#ffffff;">
+        <center><p>______________________</p></center>
+      <center><p>Vo. Bo. del Jefe(a) del
+        Departamento de ________
+      </p></center>
+    </div>
+</div>
 </body>
 </html>
