@@ -18,40 +18,32 @@
 
 <div class="d-flex" id="wrapper">
     <!-- Sidebar-->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Administrador de Creditos Complementarios</div>
             <div class="list-group list-group-flush">
-                <li class="nav-item">
+                
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Administrador') }}">Alta de Actividades</a>
-                </li>
-                <li class="nav-item">
+                
+                
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Solicitudes') }}">Solicitudes</a>
-                </li>
-                <li class="nav-item">
+                
+                
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Liberaciones') }}">Liberaciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3 nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                
+                
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('Export')}}" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Reportes</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Archivos</h6>
-                            <a class="collapse-item" href="{{ route('Liberaciones') }}">Servicio Social</a>
-                            <a class="collapse-item" href="{{ route('Liberaciones') }}">Residencia</a>
-                        </div>
-                    </div>
-                </li>
+                    Reporte</a>
+                        
+                               
+                
             </div>
-
-    </ul>
+        </div>
+    </div>
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
         <!-- Top navigation-->

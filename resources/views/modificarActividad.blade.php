@@ -6,22 +6,22 @@
         @csrf
         @method('PUT')
         <label>ID</label>
-        <input type="text" class="field" value="{{$actividad->id}}" name="id" disabled>
+        <input type="text" class="form-control" value="{{$actividad->id}}" name="id" disabled>
 
         <label>Creditos</label>
-        <select name="creditos" class="field" id="creditos">
+        <select name="creditos" class="form-control" id="creditos">
             <option value=" {{$actividad->creditos}} " >{{$actividad->creditos}}</option>
             <option> 1 </option>
             <option> 2 </option>
         </select>
 
         <label>Actividad</label>
-        <input type="text" class="field" name="actividad" value="{{$actividad->actividad}}">
+        <input type="text" class="form-control" name="actividad" value="{{$actividad->actividad}}">
         <label>Responsable</label>
-        <input type="text" class="field" name="responsable" value="{{$actividad->responsable}}">
+        <input type="text" class="form-control" name="responsable" value="{{$actividad->responsable}}">
 
         <label>Tipo</label>
-        <select name="tipo" class="field">
+        <select name="tipo" class="form-control">
             <option value="{{$actividad->tipo}} " >{{$actividad->tipo}}</option>
             <option> Eventos academicos relacionados con la carrera </option>
             <option> Construccion de prototipos y desarrollo tecnologico </option>
@@ -32,10 +32,10 @@
         </select>
 
         <label>Fecha Inicio</label>
-        <input type="date" class="field" name="fechaInicio" value="{{$actividad->fechaInicio}}">
+        <input type="date" class="form-control" name="fechaInicio" value="{{$actividad->fechaInicio}}">
 
         <label>Fecha Terminacion</label>
-        <input type="date" class="field" name="fechaTerminacion" value="{{$actividad->fechaTerminacion}}">
+        <input type="date" class="form-control" name="fechaTerminacion" value="{{$actividad->fechaTerminacion}}">
         @endforeach
 
         <br>

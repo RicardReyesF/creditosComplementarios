@@ -51,6 +51,8 @@
 		<button class="btn btn-lg btn-primary btn-block align-center" type="submit">
              Registrar
         </button>
+        <br>
+        <a href="{{route('Formulario')}}"> ¿Ya tienes Cuenta?</a>
 
 	</form>
     </div>
