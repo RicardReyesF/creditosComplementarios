@@ -6,19 +6,19 @@
 
 
         <label>Creditos</label>
-        <select name="creditos" class="field" id="creditos">
+        <select name="creditos" class="form-control" id="creditos">
             <option value=" " selected disabled hidden>Seleccione una opcion</option>
             <option> 1 </option>
             <option> 2 </option>
         </select>
 
         <label>Actividad</label>
-        <input type="text" class="field" name="actividad"> 
+        <input type="text" class="form-control" name="actividad"> 
         <label>Responsable</label>
-        <input type="text" class="field" name="responsable"> 
+        <input type="text" class="form-control" name="responsable"> 
 
         <label>Tipo</label>
-        <select name="tipo" class="field">
+        <select name="tipo" class="form-control">
             <option value=" " selected disabled hidden>Seleccione una opcion</option>
             <option> Eventos academicos relacionados con la carrera </option>
             <option> Construccion de prototipos y desarrollo tecnologico </option>
@@ -30,19 +30,19 @@
 
         @if("creditos" == 1)
         <label>Horas</label>
-        <select name="horas" class="field">
+        <select name="horas" class="form-control">
             <option value="20" selected disabled hidden>Seleccione una opcion</option>
         </select>
         @elseif("creditos" == 2)
-        <select name="horas" class="field">
+        <select name="horas" class="form-control">
             <option value="40" selected disabled hidden>Seleccione una opcion</option>
         </select>
         @endif
         <label>Fecha Inicio</label>
-        <input type="date" class="field" name="fechaInicio">
+        <input type="date" class="form-control" name="fechaInicio">
         
         <label>Fecha Terminacion</label>
-        <input type="date" class="field" name="fechaTerminacion"> 
+        <input type="date" class="form-control" name="fechaTerminacion"> 
 
 
         <br>

@@ -9,22 +9,20 @@
 <div class="container">
     <img src="{{asset('img/logoTec.png')}}" class="img-responsive">
 </div>
-
+<center><form  id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"></center>
+@csrf
 <div class="container">
     <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
+        <div class="container-fluid">           
             <div class="navbar-header">
                 <a class="navbar-brand">Creditos Complementarios ENERO - JUNIO 2022</a>
                 <a class="navbar-brand" href="{{route('Descarga')}}">Detalles</a>
                 <a class="navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
                     Salir
                 </a>
 
-
+                </form>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -34,6 +32,7 @@
                 </ul>
             </div>
         </div>
+        
     </nav>
 </div>
 <div class="container">

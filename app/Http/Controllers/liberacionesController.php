@@ -20,6 +20,6 @@ class liberacionesController extends Controller
         $actividad->desempeño=$request->get('calificacion');
         $actividad->estado=3;
         $actividad->save();
-        return redirect('/liberacionesCopy');
+        return redirect('/liberaciones');
     }
 }

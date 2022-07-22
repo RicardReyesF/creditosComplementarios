@@ -22,12 +22,13 @@ class solicitudesController extends Controller
         $actividad = solicitudes::where('alumnos_id', $alumno_id)
             ->where('actividades_id', $actividad_id)->first();
         $actividad->update(['estado' => 2]);
-        return redirect('/solicitudesCopia');
+        return redirect('/solicitudes');
     }
     public function denegar($id)
     {
         $actividad = solicitudes::find($id);
-        $actividad->delete();
-        return redirect('/solicitudesCopia');
+        $actividad->estado=0;
+        $actividad->save();
+        return redirect('/solicitudes');
     }
 }

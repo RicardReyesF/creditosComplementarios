@@ -4,6 +4,13 @@ body{
     font-size: x-large;
     box-sizing: border-box;}
 
+form1{
+   
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+
+}
+
 form{
     background-color: #EAEAEA;
     border-radius: 3px;
@@ -13,7 +20,6 @@ form{
     margin: 0 auto;
     width: 300px;
 }
-
 input, textarea{
     border: 0;
     outline: none;

@@ -90,11 +90,16 @@
                                                 <td>
                                                     <p>En curso</p>
                                                 </td>
-                                            @else
+                                            @elseif($solicitud->estado == 0)
                                                 <td>
-                                                    <a href="{{route('Constancia')}}">descargar</a>
+                                                    <p>rechazada</p>
                                                 </td>
+                                            @else
+                                            <td>
+                                            <a href="{{route('Constancia')}}">descargar</a>
 
+                                            </td>
+                                            
                                             @endif
                                         </tr>
                                         @endforeach

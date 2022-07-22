@@ -15,6 +15,6 @@ class solicitudController extends Controller
         $solicitud->alumnos_id=Auth::user()->noControl;
         $solicitud->estado=1;
         $solicitud->save();
-        return view('Solicitud');
+        return redirect('/alumnos');
     }
 }

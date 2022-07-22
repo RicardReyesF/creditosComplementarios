@@ -45,15 +45,17 @@
 
    actividad complementaria con el nivel de desempeño {{$solicitud->desempeño}},
 
-   durante el periodo escolar__________________________________ con un
+   durante el periodo escolar ENERO - JUNIO con un
 
    valor curricular de {{$solicitud->actividad->creditos}} creditos.
 </p>
+
 <br>
-<p>Se extiende la presente en la _____ a los ___ dias de _____ de 20__</p>
+<p>Se extiende la presente en Metepec, Estado de Mexico a {{date('d')}} los dias de {{date('m')}} de 20{{date('y')}} </p>
 <br>
                         <center><b>ATENTAMENTE</b></center>
 <br>
+
 <div class="row">
     <div class="column" style="background-color:#ffffff;">
         <center><p>______________________</p></center>
@@ -64,7 +66,7 @@
     <div class="column" style="background-color:#ffffff;">
         <center><p>______________________</p></center>
       <center><p>Vo. Bo. del Jefe(a) del
-        Departamento de ________
+        Departamento de {{$solicitud->alumno->carrera}}
       </p></center>
     </div>
 </div>

@@ -55,7 +55,7 @@
                                         <td>{{ $solicitud->actividad->actividad }}</td>
                                         <td>{{ $solicitud->alumno->semestre }}</td>
                                         <td>{{ $solicitud->alumno->noControl }}</td>
-                                        <td>{{ $solicitud->alumno->nombre }}</td>
+                                        <td>{{ $solicitud->alumno->nombre }} {{ $solicitud->alumno->apellidoP }} {{ $solicitud->alumno->apellidoM }}</td>
                                         <td>
                                             <form method="POST"
                                                 action="{{ route('AceptarSolicitud', ['alumno_id' => $solicitud->alumno->noControl, 'actividad_id' => $solicitud->actividad->id]) }}">

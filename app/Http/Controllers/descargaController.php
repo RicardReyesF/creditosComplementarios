@@ -5,6 +5,7 @@ use App\Models\solicitudes;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class descargaController extends Controller
 {
@@ -12,6 +13,9 @@ class descargaController extends Controller
     {
         $solicitudes = solicitudes::where('alumnos_id', Auth::user()->noControl)
             ->get();
+
+            $date = Carbon::now();
+            
 
         return view('descarga', array('solicitudes' => $solicitudes));
     }
