@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\actividades;
 use App\Models\solicitudes;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Concerns\ToArray;
 
@@ -11,20 +12,23 @@ class solicitudesController extends Controller
 {
     public function solicitudes()
     {
-        $solicitudes = solicitudes::query()->where('estado','=',1)->get();
-        return view('solicitudesCopia',array('solicitudes'=>$solicitudes));
+        $solicitudes = solicitudes::query()->where('estado', 1)->get();
+
+        return view('solicitudesCopia', array('solicitudes' => $solicitudes));
     }
 
-    public function aceptar($id){
-        $actividad = solicitudes::find($id);
-        $actividad->estado = 2;
-        $actividad->save();
+    public function aceptar($alumno_id, $actividad_id)
+    {
+        $actividad = solicitudes::where('alumnos_id', $alumno_id)
+            ->where('actividades_id', $actividad_id)->first();
+        $actividad->update(['estado' => 2]);
+
         return redirect('/solicitudesCopia');
     }
-    public function denegar($id){
+    public function denegar($id)
+    {
         $actividad = solicitudes::find($id);
         $actividad->delete();
         return redirect('/solicitudesCopia');
     }
-
 }

@@ -12,4 +12,12 @@ class solicitudes extends Model
         'actividades_id',
         'estado'
     ];
+
+    public function alumno(){
+        return $this->belongsTo(User::class,'alumnos_id','noControl');
+    }
+
+    public function actividad(){
+        return $this->belongsTo(actividades::class,'actividades_id','id');
+    }
 }

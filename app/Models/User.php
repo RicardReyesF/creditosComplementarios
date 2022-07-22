@@ -49,4 +49,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function actividades()
+    {
+        return $this->belongsToMany(actividades::class,'solicitudes','alumnos_id','actividades_id','noControl','id');
+    }
 }
