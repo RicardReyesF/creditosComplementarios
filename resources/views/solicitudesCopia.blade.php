@@ -78,13 +78,5 @@
 
             </div>
         </div>
-        <br>
-        <br>
-        <div class="w3-section" style="text-align:end;">
-
-            <a class="btn btn-success " id="sidebarToggle">Aceptar</a>
-            <a class="btn btn-danger " id="sidebarToggle">Denegar</a>
-        </div>
-
     </div>
 @endsection

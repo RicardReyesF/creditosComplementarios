@@ -36,7 +36,7 @@ Route::get('/eliminar/{id}',[\App\Http\Controllers\eliminarActividad::class,'eli
 Route::get('/solicitud/actividad/{id}',[\App\Http\Controllers\solicitudController::class,'insertar'])->name('Solicitud');
 Route::post('/solicitud/aceptar/{alumno_id}/{actividad_id}',[\App\Http\Controllers\solicitudesController::class,'aceptar'])->name('AceptarSolicitud');
 Route::get('/solicitud/denegar/{id}',[\App\Http\Controllers\solicitudesController::class,'denegar'])->name('DenegarSolicitud');
-Route::get('/liberar',[\App\Http\Controllers\liberacionesController::class,'liberar'])->name('LiberarSolicitud');
+Route::get('/liberar/{id}',[\App\Http\Controllers\liberacionesController::class,'liberar'])->name('LiberarSolicitud');
 Route::get('/constancia/pdf',[\App\Http\Controllers\descargaController::class,'pdf'])->name('Constancia');
 Auth::routes();
 

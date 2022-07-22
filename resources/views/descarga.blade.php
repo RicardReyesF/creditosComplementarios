@@ -15,33 +15,25 @@
                                     <li>
                                         <p>
                                             <strong> Nombre: </strong>
-                                            DANIELA ALBOR MEZA
+                                            {{Auth::user()->nombre}} {{Auth::user()->apellidoP}} {{Auth::user()->apellidoM}}
                                         </p>
                                     </li>
                                     <li>
                                         <p>
                                             <strong> Nùmero de Control: </strong>
-                                            15280819
+                                            {{Auth::user()->noControl}}
                                         </p>
                                     </li>
                                     <li>
                                         <p>
                                             <strong> Carrera: </strong>
-                                            INGENIERIA EN SISTEMAS COMPUTACIONALES
+                                            {{Auth::user()->carrera}}
                                         </p>
                                     </li>
                                     <li>
                                         <p>
-                                            <strong> Promedio General: </strong>
-                                            83.37
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            <strong> Creditos Complementarios Acumulados: </strong>
-                                            3
-                                            <strong> de </strong>
-                                            5
+                                            <strong> Semestre: </strong>
+                                            {{Auth::user()->semestre}}
                                         </p>
                                     </li>
                                 </ul>
@@ -65,19 +57,13 @@
                                                 Semestre
                                             </th>
                                             <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colaspan="1" aria-sort="ascending" aria-label="Materia: activate to sort column ascendig" style="width: 47px;">
-                                                Materia
+                                                Tipo de Actividad
                                             </th>
                                             <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-label="Creditos: activate to sort column ascending" style="width: 54px;">
                                                 Creditos
                                             </th>
-                                            <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-label="Actividad: activate to sort column ascendig" style="width: 149px;">
-                                                Actividad
-                                            </th>
                                             <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-label="Responsable: activate to sort column ascending" style="width: 170px;">
                                                 Responsable
-                                            </th>
-                                            <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-label="Tipo: activate to sort column ascending" style="width: 170px;">
-                                                Tipo
                                             </th>
                                             <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-label="Horas: activate to sort column ascending" style="width: 170px;">
                                                 Horas
@@ -88,31 +74,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($solicitudes as $solicitud )
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">4</td>
-                                            <td>2219</td>
-                                            <td>2</td>
-                                            <td align="left">Curso Laravel</td>
-                                            <td align="left">Luis Estrada Manuel</td>
-                                            <td>ACT_EXTRAES</td>
-                                            <td>20</td>
-                                            <td>En Curso</td>
-                                        </tr>
-                                        <tr role="row" class="odd">
-                                            <td class="sorting_1">4</td>
-                                            <td>2043</td>
-                                            <td>3</td>
-                                            <td align="left">Excel basico</td>
-                                            <td align="left">Luis Roberto Cruz</td>
-                                            <td>COMPLEMENTARIA_GENERICA</td>
-                                            <td>20</td>
-                                            <td>Acreditado</td>
+                                            <td>{{ $solicitud->alumno->semestre }}</td>
+                                            <td>{{ $solicitud->actividad->actividad }}</td>
+                                            <td>{{ $solicitud->actividad->creditos }}</td>
+                                            <td>{{ $solicitud->actividad->responsable }}</td>
+                                            <td>{{ $solicitud->actividad->horas }}</td>
+                                            @if ($solicitud->estado == 1)
                                             <td>
-                                                <a href="{{route('Constancia')}}">
-                                                    Descargar
-                                                </a>
+                                                <p>Solicitado</p>
                                             </td>
+
+                                            @elseif ($solicitud->estado == 2)
+                                                <td>
+                                                    <p>En curso</p>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <a href="{{route('Constancia')}}">descargar</a>
+                                                </td>
+
+                                            @endif
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

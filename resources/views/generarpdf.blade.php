@@ -27,23 +27,27 @@
     }
     </style>
 <body>
+    @foreach ( $solicitudes as $solicitud)
 <img src="{{public_path('documentos/logo-tecnm-pdf.jpg')}}" height="100" >
+
+
+
 <h2><b> XXVI. CONSTANCIA DE CUMPLIMIENTO DE ACTIVIDAD COMPLEMENTARIA </b></h2>
-<p><b>C._______________ </b></p>
+<p><b>C. </b></p>
 <p><b>Jefe(a) del Departamento de Servicios Escolares o su equivalente en los Institutos Tecnologicos Descentralizados</b></p>
 <p><b>PRESENTE</b></p>
 <br>
 <p>El que suscribe ____________. por este medio se permite hacer de su
 
-   conocimiento que el estudiante ______________________ con numero de
+   conocimiento que el estudiante {{$solicitud->alumno->nombre}} {{$solicitud->alumno->apellidoP}} {{$solicitud->alumno->apellidoM}} con numero de
 
-   control____________ de la carrera de_______________ han cumplido su
+   control {{$solicitud->alumno->noControl}} de la carrera de {{$solicitud->alumno->carrera}} han cumplido su
 
-   actividad complementaria con el nivel de desempeño _______________,
+   actividad complementaria con el nivel de desempeño {{$solicitud->desempeño}},
 
    durante el periodo escolar__________________________________ con un
 
-   valor curricular de _______ creditos.
+   valor curricular de {{$solicitud->actividad->creditos}} creditos.
 </p>
 <br>
 <p>Se extiende la presente en la _____ a los ___ dias de _____ de 20__</p>
@@ -64,5 +68,6 @@
       </p></center>
     </div>
 </div>
+@endforeach
 </body>
 </html>

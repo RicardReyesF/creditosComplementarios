@@ -15,6 +15,15 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand">Creditos Complementarios ENERO - JUNIO 2022</a>
+                <a class="navbar-brand" href="{{route('Descarga')}}">Detalles</a>
+                <a class="navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    Salir
+                </a>
+
 
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -30,7 +39,7 @@
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-tittle"> Detalle </h3>
+            <h3 class="panel-tittle"> Actividades </h3>
         </div>
         <div class="panel-body">
             <div class="panel-body">
@@ -41,27 +50,19 @@
                                 <li>
                                     <p>
                                         <strong> Nombre: </strong>
-                                        DANIELA ALBOR MEZA
+                                        {{Auth::user()->nombre}} {{Auth::user()->apellidoP}} {{Auth::user()->apellidoM}}
                                     </p>
                                 </li>
                                 <li>
                                     <p>
                                         <strong> Nùmero de Control: </strong>
-                                        15280819
+                                        {{Auth::user()->noControl}}
                                     </p>
                                 </li>
                                 <li>
                                     <p>
                                         <strong> Carrera: </strong>
-                                        INGENIERIA EN SISTEMAS COMPUTACIONALES
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <strong> Creditos Complementarios Acumulados: </strong>
-                                        3
-                                        <strong> de </strong>
-                                        5
+                                        {{Auth::user()->carrera}}
                                     </p>
                                 </li>
                             </ul>
@@ -113,8 +114,9 @@
                                         <td class="tipo">{{$actividad->tipo}}</td>
                                         <td class="horas">{{$actividad->horas}}</td>
                                         <td>
-                                            <a type="button" class="btn btn-prymari" href="{{route('Solicitud',$actividad)}}"> Unirse </a>
+                                            <a type="button" class="btn btn-prymari" href="{{route('Solicitud',$actividad->id)}}"> Unirse </a>
                                         </td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -124,6 +126,7 @@
 
                 </div>
             </div>
+
         </div>
         <br>
         <br>

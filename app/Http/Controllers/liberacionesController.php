@@ -15,13 +15,11 @@ class liberacionesController extends Controller
 
         return view('liberacionesCopy', array('solicitudes' => $solicitudes));
     }
-    public function liberar(Request $request){
-        return $request;
+    public function liberar(Request $request,$id){
         $actividad = solicitudes::find($id);
-        return $actividad;
-        $actividad->estado = 3;
-        //$actividad->desempeño=$desempeño;
+        $actividad->desempeño=$request->get('calificacion');
+        $actividad->estado=3;
         $actividad->save();
-        return redirect('/solicitudesCopia');
+        return redirect('/liberacionesCopy');
     }
 }

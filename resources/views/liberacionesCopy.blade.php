@@ -38,29 +38,28 @@
                         <tbody>
                             @foreach ($solicitudes as $solicitud )
                             <tr role="row" class="odd">
-                                <td>{{$solicitud->creditos}}</td>
-                                <td>{{$solicitud->actividad}}</td>
-                                @foreach ($solicitud->alumnos->filter(fn($item) => $item->pivot->estado == 1) as $alumno )
-                                <td>{{$alumno->semestre}}</td>
-                                <td>{{$alumno->carrera}}</td>
-                                <td>{{$alumno->noControl}}</td>
-                                <td>{{$alumno->nombre}} {{$alumno->apellidoP}} {{$alumno->apellidoM}}</td>
-                                @endforeach
-                                <form action="{{ route('LiberarSolicitud') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="alumno_id" value="{{  }}">
-                                    <input type="hidden" name="actividad_id">
+                                <td>{{ $solicitud->actividad->creditos }}</td>
+                                <td>{{ $solicitud->actividad->actividad }}</td>
+                                <td>{{ $solicitud->alumno->semestre }}</td>
+                                <td>{{ $solicitud->alumno->noControl }}</td>
+                                <td>{{ $solicitud->alumno->nombre }}</td>
+                                <td>
+                                <form action="{{ route('LiberarSolicitud',$solicitud->id) }}" method="GET">
+                                   @csrf
+                                   @method('PUT')
+                                    <input type="hidden" name="alumno_id" value="{{$solicitud->alumno->noControl}}">
+                                    <input type="hidden" name="actividad_id" value="{{$solicitud->actividad->id}}">
                                     <td>
                                         <select name="calificacion"  class="calificacion" id="calf">
-                                                <option $value="{{$solicitud->desempeño}}">{{$solicitud->desempeño}}</option>
-                                                    <option value="1"> Sufuciente </option>
-                                                    <option value="2"> Bueno </option>
-                                                    <option value="3"> Notable </option>
-                                                    <option value="4"> Excelente </option>
+                                                <option $value="{{$solicitud->desempeño}}"></option>
+                                                    <option> Sufuciente </option>
+                                                    <option> Bueno </option>
+                                                    <option> Notable </option>
+                                                    <option> Excelente </option>
                                         </select>
                                     </td>
                                     <td>
-                                        <a type="button" class="btn btn-success" href="{{route('LiberarSolicitud',)}}" method="GET"> Liberar </a>
+                                        <button type="submit" class="btn btn-success"> Liberar </a>
                                     </td>
                                 </form>
                             </tr>
