@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ReportesExport;
 use App\Models\solicitudes;
 use App\Models\actividades;
+use App\Models\reporteModel;
 use Illuminate\Http\Request;
 
 class liberacionesController extends Controller
@@ -20,6 +22,17 @@ class liberacionesController extends Controller
         $actividad->desempeño=$request->get('calificacion');
         $actividad->estado=3;
         $actividad->save();
+
+        $reporte = new reporteModel();
+        $reporte->no_ctrl = $request->get('alumno_id');
+        $reporte->nombre = $request->get('nombre');
+        $reporte->semestre = $request->get('semestre');
+        $reporte->carrera = $request->get('carrera');
+        $reporte->materia = $request->get('actividad_id');
+        $reporte->save();
+
         return redirect('/liberaciones');
+
+
     }
 }

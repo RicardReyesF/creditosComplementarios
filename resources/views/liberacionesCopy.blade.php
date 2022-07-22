@@ -48,7 +48,10 @@
                                    @csrf
                                    @method('PUT')
                                     <input type="hidden" name="alumno_id" value="{{$solicitud->alumno->noControl}}">
-                                    <input type="hidden" name="actividad_id" value="{{$solicitud->actividad->id}}">
+                                    <input type="hidden" name="nombre" value="{{$solicitud->alumno->nombre}}{{$solicitud->alumno->apellidoP}}{{$solicitud->alumno->apellidoM}}">
+                                    <input type="hidden" name="semestre" value="{{$solicitud->alumno->semestre}}">
+                                    <input type="hidden" name="carrera" value="{{$solicitud->alumno->carrera}}">
+                                    <input type="hidden" name="actividad_id" value="{{$solicitud->actividad->actividad}}">
                                     <td>
                                         <select name="calificacion"  class="calificacion" id="calf">
                                                 <option $value="{{$solicitud->desempeño}}"></option>
