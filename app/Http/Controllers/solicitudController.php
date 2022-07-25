@@ -9,11 +9,12 @@ use PhpParser\Node\Expr\Cast\Array_;
 
 class solicitudController extends Controller
 {
-    public function insertar($id){
+    public function insertar($id,$user,$tipo){
         $solicitud = new solicitudes;
         $solicitud->actividades_id=$id;
         $solicitud->alumnos_id=Auth::user()->noControl;
         $solicitud->estado=1;
+        $solicitud->userAlta=$user;
         $solicitud->save();
         return redirect('/alumnos');
     }

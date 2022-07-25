@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('alumnos_id');
             $table->integer('estado');
             $table->string('desempeño')->nullable();
+            $table->string('userAlta')->nullable();
             $table->timestamps();
 
         });
@@ -33,5 +34,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('solicitudes');
     }
-    
+
 };

@@ -13,7 +13,7 @@
 @csrf
 <div class="container">
     <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">           
+        <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand">Creditos Complementarios ENERO - JUNIO 2022</a>
                 <a class="navbar-brand" href="{{route('Descarga')}}">Detalles</a>
@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </div>
-        
+
     </nav>
 </div>
 <div class="container">
@@ -113,7 +113,7 @@
                                         <td class="tipo">{{$actividad->tipo}}</td>
                                         <td class="horas">{{$actividad->horas}}</td>
                                         <td>
-                                            <a type="button" class="btn btn-prymari" href="{{route('Solicitud',$actividad->id)}}"> Unirse </a>
+                                            <a type="button" class="btn btn-prymari" href="{{route('Solicitud',['id' => $actividad->id, 'user' =>$actividad->userAlta, 'tipo' => $actividad->tipo])}}"> Unirse </a>
                                         </td>
 
                                     </tr>

@@ -41,9 +41,10 @@
                                 <td>{{ $solicitud->actividad->creditos }}</td>
                                 <td>{{ $solicitud->actividad->actividad }}</td>
                                 <td>{{ $solicitud->alumno->semestre }}</td>
+                                <td>{{ $solicitud->alumno->carrera }}</td>
                                 <td>{{ $solicitud->alumno->noControl }}</td>
                                 <td>{{ $solicitud->alumno->nombre }}</td>
-                                <td>
+
                                 <form action="{{ route('LiberarSolicitud',$solicitud->id) }}" method="GET">
                                    @csrf
                                    @method('PUT')
@@ -52,6 +53,7 @@
                                     <input type="hidden" name="semestre" value="{{$solicitud->alumno->semestre}}">
                                     <input type="hidden" name="carrera" value="{{$solicitud->alumno->carrera}}">
                                     <input type="hidden" name="actividad_id" value="{{$solicitud->actividad->actividad}}">
+                                    <input type="hidden" name="tipo" value="{{$solicitud->actividad->tipo}}">
                                     <td>
                                         <select name="calificacion"  class="calificacion" id="calf">
                                                 <option $value="{{$solicitud->desempeño}}"></option>

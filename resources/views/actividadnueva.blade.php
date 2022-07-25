@@ -13,9 +13,10 @@
         </select>
 
         <label>Actividad</label>
-        <input type="text" class="form-control" name="actividad"> 
+        <input type="text" class="form-control" name="actividad">
         <label>Responsable</label>
-        <input type="text" class="form-control" name="responsable"> 
+        <input type="text" class="form-control" name="responsable">
+        <input type="hidden" name="userAlta" value="{{Auth::user()->noControl}}">
 
         <label>Tipo</label>
         <select name="tipo" class="form-control">
@@ -40,9 +41,9 @@
         @endif
         <label>Fecha Inicio</label>
         <input type="date" class="form-control" name="fechaInicio">
-        
+
         <label>Fecha Terminacion</label>
-        <input type="date" class="form-control" name="fechaTerminacion"> 
+        <input type="date" class="form-control" name="fechaTerminacion">
 
 
         <br>

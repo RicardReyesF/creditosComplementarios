@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\actividades;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class actividadnueva extends Controller
 {
     public function actividadnueva()
     {
+
         return view('actividadnueva');
     }
 
     public function create(Request $request)
     {
-        
+
         $actividad=new actividades;
         $actividad->creditos=$request->creditos;
         $actividad->actividad=$request->actividad;
@@ -23,10 +25,11 @@ class actividadnueva extends Controller
         if($request->creditos == 1)
         {
             $actividad->horas=20;
-        } else 
+        } else
             {
                 $actividad->horas=40;
             }
+        $actividad->userAlta=$request->userAlta;
         $actividad->fechaInicio=$request->fechaInicio;
         $actividad->fechaTerminacion=$request->fechaTerminacion;
         $actividad->save();

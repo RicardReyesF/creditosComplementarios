@@ -2,9 +2,9 @@
 
 namespace App\Exports;
 
-
-use App\Models\actividades;
 use App\Models\reporteModel;
+use Maatwebsite\Excel\Concerns\FromCollection;
+
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithEvents;
@@ -12,14 +12,14 @@ use Maatwebsite\Excel\Events\BeforeExport;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class ReportesExport implements WithHeadings,WithEvents,FromQuery
+class paalfpExport implements WithHeadings,WithEvents,FromQuery
 {
 
     use Exportable;
 
     public function query()
     {
-        return reporteModel::query()->where('tipo','Proyectos de investigacion');
+        return reporteModel::query()->where('tipo','Programas de apoyo a la formacion profesional');
     }
 
 
@@ -63,5 +63,5 @@ class ReportesExport implements WithHeadings,WithEvents,FromQuery
                 },
             ];
         }
-    }
 
+}

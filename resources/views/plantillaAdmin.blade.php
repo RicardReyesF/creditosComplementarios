@@ -22,25 +22,24 @@
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Administrador de Creditos Complementarios</div>
             <div class="list-group list-group-flush">
-                
+
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Administrador') }}">Alta de Actividades</a>
-                
-                
+
+
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Solicitudes') }}">Solicitudes</a>
-                
-                
+
+
                     <a class="list-group-item list-group-item-action list-group-item-light p-3"
                         href="{{ route('Liberaciones') }}">Liberaciones</a>
-                
-                
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('Export')}}" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                    Reporte</a>
-                        
-                               
-                
+
+
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('Reportes')}}"
+                    >Reportes</a>
+
+
+
             </div>
         </div>
     </div>
@@ -64,7 +63,7 @@
                                 document.getElementById('logout-form').submit();">
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                        
+
                                     </form>
                                     Salir
                                 </a>

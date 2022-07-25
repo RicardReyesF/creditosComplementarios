@@ -7,12 +7,13 @@ use App\Models\solicitudes;
 use App\Models\actividades;
 use App\Models\reporteModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class liberacionesController extends Controller
 {
     public function liberaciones()
     {
-        $solicitudes = solicitudes::query()->where('estado',2)->get();
+        $solicitudes = solicitudes::query()->where('estado',2)->where('userAlta',Auth::user()->noControl)->get();
 
 
         return view('liberacionesCopy', array('solicitudes' => $solicitudes));
@@ -29,6 +30,8 @@ class liberacionesController extends Controller
         $reporte->semestre = $request->get('semestre');
         $reporte->carrera = $request->get('carrera');
         $reporte->materia = $request->get('actividad_id');
+        $reporte->tipo = $request->get('tipo');
+        $reporte->desempeño = $request->get('calificacion');
         $reporte->save();
 
         return redirect('/liberaciones');

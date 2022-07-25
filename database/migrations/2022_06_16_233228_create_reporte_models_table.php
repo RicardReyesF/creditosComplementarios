@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('semestre');
             $table->string('carrera');
             $table->string('materia');
+            $table->string('tipo');
+            $table->string('desempeño');
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('responsable');
             $table->string('tipo');
             $table->integer('horas');
+            $table->integer('userAlta');
             $table->date('fechaInicio');
             $table->date('fechaTerminacion');
             $table->timestamps();
