@@ -24,7 +24,7 @@
             <option> Eventos academicos relacionados con la carrera </option>
             <option> Construccion de prototipos y desarrollo tecnologico </option>
             <option> Participacion en ediciones </option>
-            <option> Programas de apoyo a la formacion profecional </option>
+            <option> Programas de apoyo a la formacion profesional </option>
             <option> Proyectos de investigacion </option>
             <option> Generico </option>
         </select>

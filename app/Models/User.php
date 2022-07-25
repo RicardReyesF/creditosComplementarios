@@ -54,4 +54,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(actividades::class,'solicitudes','alumnos_id','actividades_id','noControl','id');
     }
+
+    
 }

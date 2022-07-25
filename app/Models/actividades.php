@@ -19,4 +19,9 @@ class actividades extends Model
         ->withPivot('estado');
     }
 
+    public function administrador()
+    {
+        return $this->belongsToMany(User::class,'solicitudes','actividades_id','alumnos_id','id','userAlta');
+    }
+
 }

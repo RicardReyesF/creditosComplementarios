@@ -76,9 +76,7 @@
                             <table id="tblCardex" class="table table-bordered table-striped dataTable no-footer" style="font-size: 10px" role="grid">
                                 <thead>
                                     <tr class="info" role="row">
-                                        <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Semestre: activate to sort column descending" style="width: 59px;">
-                                            Semestre
-                                        </th>
+                                        
                                         <th class="sporting_asc" tabindex="0" aria-controls="tblCardex" rowspan="1" colaspan="1" aria-sort="ascending" aria-label="Materia: activate to sort column ascendig" style="width: 47px;">
                                             Materia
                                         </th>
@@ -105,7 +103,7 @@
                                 <tbody>
                                     @foreach($actividades as $actividad)
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">4</td>
+                                        
                                         <td class="id">{{$actividad->id}}</td>
                                         <td class="creditos">{{$actividad->creditos}}</td>
                                         <td class="actividad" align="left">{{$actividad->actividad}}</td>

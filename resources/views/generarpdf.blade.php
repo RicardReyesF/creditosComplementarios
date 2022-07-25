@@ -37,7 +37,7 @@
 <p><b>Jefe(a) del Departamento de Servicios Escolares o su equivalente en los Institutos Tecnologicos Descentralizados</b></p>
 <p><b>PRESENTE</b></p>
 <br>
-<p>El que suscribe ____________. por este medio se permite hacer de su
+<p>El que suscribe {{$solicitud->administrador->nombre}}{{$solicitud->administrador->apellidoP}} {{$solicitud->administrador->apellidoM}}, por este medio se permite hacer de su
 
    conocimiento que el estudiante {{$solicitud->alumno->nombre}} {{$solicitud->alumno->apellidoP}} {{$solicitud->alumno->apellidoM}} con numero de
 
@@ -58,6 +58,7 @@
 
 <div class="row">
     <div class="column" style="background-color:#ffffff;">
+        <center><p>{{$solicitud->actividad->responsable}}</p>
         <center><p>______________________</p></center>
       <center><p>Nombre y firma del (de la)
         Profesor(a) responsable

@@ -57,7 +57,7 @@
                                     <td>
                                         <select name="calificacion"  class="calificacion" id="calf">
                                                 <option $value="{{$solicitud->desempeño}}"></option>
-                                                    <option> Sufuciente </option>
+                                                    <option> Suficiente </option>
                                                     <option> Bueno </option>
                                                     <option> Notable </option>
                                                     <option> Excelente </option>
